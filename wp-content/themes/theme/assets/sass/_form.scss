@@ -4,8 +4,17 @@
         background-repeat:repeat;
     }
     margin:15px auto;
-    .form_spacer{
+    .form-spacer{
+        display: none;
         color:red;
+        font-size: 14px;
+        border:1px solid #000000;
+        margin:15px auto;
+        line-height:2;
+        padding: 0px 12px;
+        &.valid{
+            color:green !important;
+        }
     }
     .form-group{
         color:#000000;
@@ -40,13 +49,6 @@
         border-radius: 15px;
         line-height:2;
         border:0px;
+        color:#ffffff; 
     }
-    /*    .notification{
-            color:black !important;
-        }
-        .alert-error{
-            background-color:#f6baba;
-            border-color: #f31515;
-            color: #f31515;
-        }*/
 }

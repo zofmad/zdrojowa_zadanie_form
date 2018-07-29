@@ -7,7 +7,10 @@ function createForm() {
     ?>
     <form class="contact-form" action="" method="post">
         <div class="row">
-            <div class="col-xs-12 form_spacer"></div>
+            <div class="col-xs-12">
+                <div class="form-spacer">
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="form-group">Imię
                     <input type="text" name="name" class="name form-control" placeholder="Imię">

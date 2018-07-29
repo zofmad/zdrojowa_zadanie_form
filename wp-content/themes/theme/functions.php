@@ -1,23 +1,29 @@
 <?php
+
 function pll_e($str) {
     echo $str;
 }
+
 function pll_current_language() {
     return '';
 }
+
 /*
  * Allow svg
  */
+
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
+
 add_filter('upload_mimes', 'cc_mime_types');
 /**
  * Functions main file
  */
 // Setup
 if (!function_exists('theme_setup')) {
+
     function theme_setup() {
         // Add feed links
         add_theme_support('automatic-feed-links');
@@ -26,8 +32,10 @@ if (!function_exists('theme_setup')) {
         // Post thumbs support
         add_theme_support('post-thumbnails');
     }
+
 }
 add_action('after_setup_theme', 'theme_setup');
+
 /**
  * Register sidebar area
  */
@@ -42,7 +50,9 @@ function sidebar() {
         'after_title' => '</h2>',
     ));
 }
+
 add_action('widgets_init', 'sidebar');
+
 function init_front_assets() {
     //wp_deregister_script('jquery');
     wp_enqueue_script('jquery');
@@ -51,22 +61,25 @@ function init_front_assets() {
     wp_enqueue_script('app', '/assets/jsdist/app.js', array(), filemtime(
                     get_template_directory() . '/assets/jsdist/app.js'), true);
 }
+
 add_action('wp_enqueue_scripts', 'init_front_assets');
+
 function adminJs() {
     echo '<script>';
     echo 'var site_url = "' . site_url('/') . '";';
     echo 'var ajax_url = "' . site_url('ajax') . '";';
     echo '</script>';
-    //wp_enqueue_script('app', '/assets/jsdist/app.js', array(), filemtime(
-    //               get_template_directory() . '/assets/jsdist/app.js'), true);
 }
+
 add_action('admin_head', 'adminJs');
+
 /**
  * Template assets
  */
 function asset($value) {
     return site_url() . "/assets/" . $value;
 }
+
 function _asset($value) {
     echo asset($value);
 }
@@ -89,7 +102,9 @@ function remove_json_api() {
     // Remove all embeds rewrite rules.
     //add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites',10);
 }
+
 add_action('after_setup_theme', 'remove_json_api');
+
 function disable_json_api() {
     // Filters for WP-API version 1.x
     add_filter('json_enabled', '__return_false');
@@ -98,18 +113,22 @@ function disable_json_api() {
     add_filter('rest_enabled', '__return_false');
     add_filter('rest_jsonp_enabled', '__return_false');
 }
+
 add_action('after_setup_theme', 'disable_json_api');
+
 function remove_dns_prefetch($hints, $relation_type) {
     if ('dns-prefetch' === $relation_type) {
         return array_diff(wp_dependencies_unique_hosts(), $hints);
     }
     return $hints;
 }
+
 add_filter('wp_resource_hints', 'remove_dns_prefetch', 10, 2);
 /**
  * Login session expire longer
  */
 add_filter('auth_cookie_expiration', 'my_expiration_filter', 99, 3);
+
 function my_expiration_filter($seconds, $user_id, $remember) {
     //if "remember me" is checked;
     if ($remember) {
@@ -126,3 +145,5 @@ function my_expiration_filter($seconds, $user_id, $remember) {
     }
     return $expiration;
 }
+
+require 'libs/mail.php';

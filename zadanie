@@ -1,0 +1,26 @@
+# zdrojowa_zadanie_form
+
+zadanie:
+Na nowej gałęzi zrób nową wtyczkę. Stwórz nowy shortcode [formularz_kontaktowy], 
+który w miejscu wstawienia tego shortcodu, będzie wyświetlał formularz kontaktowy. 
+Niech w nim będzie pole Imię, Nazwisko, E-mail i Treść. 
+Tylko E-mail i Treść jest wymagana. Po wysłaniu formularzu, 
+ma się wysyłać E-mail na wybrany E-mail. 
+Wygląd tego formularzu ostyluj sam, tak jak uważasz. 
+Potem commit i merge do mastera.
+
+zrób formularz kontaktowy, na Wordpressie, na stronie głównej.
+ostyluj go tak, by wyglądał czytelnie, ładnie i miał pasować do strony 
+balticpark-molo.pl
+Ma być responsywny i wygodny do uzupełnienia na telefonie
+Walidację zrób w JS oraz w PHP
+Do samej wysyłki maila wykorzystaj PHP. Niech po wysłaniu formularza idzie request 
+ajax do pliku PHP np. w pluginach, 
+Po poprawnym wysłaniu niech wyświetli się komunikat, że wiadomość została wysłana i 
+dane z formularza wyczyszczone - zabezpieczenie przez przypadek wysłania dwa razy 
+tego samego formularza 
+Ile Ci starczy czasu ułóż ładnie kod, podziel kod na funkcje, 
+możesz komentarze napisać - tak jak uważasz by to było dobre
+Idealnie by było, gdyby kod spełniał założenia (lub w części) 
+PSR (http://www.php-fig.org/psr/psr-2/)  i SOLID. 
+
