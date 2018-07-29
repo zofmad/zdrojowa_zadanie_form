@@ -7,4 +7,4 @@ get_template_part('partials/content', 'header');
  
         
 
-<?php get_footer(); ?>    
+<?php get_footer();   

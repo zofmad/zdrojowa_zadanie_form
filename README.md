@@ -18,12 +18,16 @@ login:admin
 hasło:dnjcpQSLdesHp35sb2
 
 W .htaccess są wpisy potrzebne do prawidłowego 
-działania assetów(są poza częścią nadpisywaną przez wordpress, dlatego wysyłam .htaccess na gita)
+działania assetów(są poza częścią nadpisywaną przez wordpress, 
+dlatego wysyłam .htaccess na gita)
 
-U mnie mail sie wysyla (odkomentowane extension=php_openssl.dll w php.ini)
+U mnie mail się wysyła (odkomentowane extension=php_openssl.dll w php.ini)
 
-Walidacja w js i php ta sama, nie wiem czy o to chodzilo, 
-ale zrobilam na wyrazeniach reguralnych bo uważam, 
-ze do tego przypadku to najlepsza/najprostsza walidacja formularza wysylanego mailem.
-Gdyby chodzilo o baze danych to oczywiscie sprawdzalabym typy zmiennych 
-i zrobilabym zabezpieczenie (przed mysql injection np.)
+Walidacja w js i php ta sama, nie wiem, czy o to chodziło, 
+ale zrobiłam na wyrazeniach reguralnych bo uważam, 
+że do tego przypadku to najlepsza/najprostsza walidacja formularza wysyłanego mailem.
+Gdyby chodziło o bazę danych to oczywiście sprawdzałabym typy zmiennych 
+i zrobiłabym zabezpieczenie (przed SQL injection np.)
+
+plik mail.php - kod jest dość krótki, więc już nie dzieliłam na klasę i funkcje, 
+jeśli chcesz mogę zrobić drugą wersję pliku, obiektową i dosłać jeszcze dziś.
