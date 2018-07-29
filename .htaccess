@@ -1,0 +1,21 @@
+RewriteRule ^assets/css/(.*) /zdrojowa_zadanie_form/wp-content/themes/theme/assets/css/$1 [QSA,L]
+RewriteRule ^assets/js/(.*) /zdrojowa_zadanie_form/wp-content/themes/theme/assets/js/$1 [QSA,L]
+RewriteRule ^assets/jsdist/(.*) /zdrojowa_zadanie_form/wp-content/themes/theme/assets/jsdist/$1 [QSA,L]
+RewriteRule ^assets/img/(.*) /zdrojowa_zadanie_form/wp-content/themes/theme/assets/img/$1 [QSA,L]
+RewriteRule ^assets/fonts/(.*) /zdrojowa_zadanie_form/wp-content/themes/theme/assets/fonts/$1 [QSA,L]
+RewriteRule ^uploads/(.*) /zdrojowa_zadanie_form/wp-content/uploads/$1 [QSA,L]
+RewriteRule ^plugins/(.*) /zdrojowa_zadanie_form/wp-content/plugins/$1 [QSA,L]
+RewriteRule ^ajax$ /zdrojowa_zadanie_form/wp-admin/admin-ajax.php [QSA,L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /zdrojowa_zadanie_form/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /zdrojowa_zadanie_form/index.php [L]
+</IfModule>
+
+# END WordPress
+
