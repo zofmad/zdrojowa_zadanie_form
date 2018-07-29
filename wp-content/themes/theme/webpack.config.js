@@ -35,7 +35,15 @@ module.exports = {
                     }
                 }
             },
-           
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                include: __dirname,
+                exclude: /node_modules/,
+                options: {
+                    postcss: [require('autoprefixer')({browsers: ['>0%']})]
+                }
+            },
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
